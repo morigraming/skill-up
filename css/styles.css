@@ -1,7 +1,7 @@
 /* 共通の部分 */
 html {
   font-size: 16px;
-  font-style: Noto Sans JP;
+  font-family: "Noto Sans JP";
   color: #333333;
 }
 
@@ -25,18 +25,12 @@ html {
   justify-content: space-between;
   height: 100%;
 }
-.header .header-logo {
+.header-inner-top {
   display: flex;
-  align-items: center;
 }
-.header-logo img {
-  width: 55px;
-  height: 55px;
-}
-.header-logo img .header-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-left: 16px;
+.header-inner-top .header-title {
+  line-height: 47px;
+  padding-left: 16px;
 }
 .header-nav ul {
   display: flex;
@@ -67,7 +61,6 @@ html {
 }
 .hamburger-menu {
   display: none;
-  margin-right: 0;
 }
 .nav-wrapper {
   display: none;
@@ -76,10 +69,9 @@ html {
 /* メイン */
 .main {
   background-image: url(../img/楕円形\ 1.svg);
-  background-position: top -150px right -120px;
+  background-position: top -30px right -85px;
   background-size: auto;
   background-repeat: no-repeat;
-  position: relative;
 }
 .main .main-inner {
   max-width: 1022px;
@@ -89,8 +81,7 @@ html {
 }
 .main .main-copy {
   text-align: left;
-  margin-top: 50px;
-
+  margin-top: 159px;
 }
 .main .main-copy>h2 {
   font-size: 2rem;
@@ -102,14 +93,19 @@ html {
   font-size: 1rem;
   line-height: 24px;
   margin-bottom: 40px;
-  font-weight: bold;
+  font-weight: bold;  
 }
 .main .main-img {
   position: absolute;
-  right: 6%;
-  top: 20%;
-  z-index: 1000;
+  right: 8%;
+  top: 40%;
+  z-index: 1;
 }
+.index-top {
+  position: absolute;
+  z-index: 2;
+}
+
 
 /* 特徴 */
 .feature .feature-title {
@@ -236,7 +232,7 @@ table td {
 .FAQ-answer {
   text-align: left;
   background-color: #E5E5E5;
-  border: 1px solid #837c7c;
+  border: 1px solid #E5E5E5;
 }
 .current {
   display: none;
@@ -287,6 +283,7 @@ table td {
 }
 .blog-text-box p {
   font-weight: bold;
+  line-height: 26px;
 } 
 .blog-text-box time {
   font-weight: bold;
@@ -426,10 +423,8 @@ label span {
   line-height: 30px;
   font-size: 1.15rem;
   border-radius: 10px;
-  text-align: center;
   margin-left: 23px;
-  padding-left: 16px;
-  padding-right: 16px;
+  padding: 4px 16px 6px;
 }
 .form-title {
   color: #333;
@@ -492,6 +487,9 @@ label span {
 /* タブレットサイズ版 */
 @media screen and (max-width:768px) {
   
+  .sp_br {
+    display: none;
+  }
   
   /* ヘッダー */
   .header-nav {
@@ -504,6 +502,9 @@ label span {
     cursor: pointer;
     background-color: #999;
     border-radius: 2px;
+    position: fixed;
+    top: 94px;
+    right: 0;
   }
   .bar {
     position: absolute;
@@ -538,7 +539,7 @@ label span {
     height: 100vh;
     position: fixed;
     top: 94px;
-    left: 40px;
+    right: 40px;
     background-color: #666;
   } 
   .nav-item {
@@ -568,6 +569,8 @@ label span {
   .main-inner .main-img{
     overflow: hidden;
     opacity: 0.7;
+    position: absolute;
+    top: 180px;
   }
  
   /* 特徴 */
@@ -595,13 +598,35 @@ label span {
 
 /* SP版 */
 @media screen and (max-width:375px) {
+  
+  .sp_br {
+    display: none;
+  }
+
+  /* ヘッダー */
+  .header-inner-top {
+    height: 30px;
+  }
+  .header-inner-top img {
+    width: 30px;
+    height: 30px;
+  }
+  .header-inner-top .header-title {
+    line-height: 30px;
+  }
+  .contact-btn {
+    width: 120px;
+    height: 30px;
+    line-height: 30px;
+  }
+
 
   /* メイン */
   .header-nav {
     display: none;
   }
   .main-img img {
-    opacity: .5;
+    opacity: .4;
   }
   .main-inner .contact-btn {
     margin: 0 auto;
@@ -629,11 +654,11 @@ label span {
     margin: 0 auto;
   }
   table th {
-    padding: 5px;
+    padding: 15px;
     width: 300px;
   }
   table td {
-    padding: 5px;
+    padding: 15px;
     width: 300px;
     text-align: center;
   }
@@ -658,7 +683,7 @@ label span {
     flex-direction: column;
   }
   .blog-content-box {
-    width: 70%;
+    width: 85%;
     margin: 0 auto;
     margin-bottom: 20px;
   }
@@ -668,11 +693,14 @@ label span {
     padding-bottom: 60px;
   }
   .works-content-box {
-    width: 60%;
+    width: 80%;
     margin: 0 auto 20px;
   }
+  .works-img-box {
+    width: 300px;
+  }
   .swiper-container {
-    width: 250px;
+    width: 80%;
   }
  
   /* お問い合わせ */
