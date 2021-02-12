@@ -29,7 +29,10 @@ $(function(){
       centeredSlides : true,
       breakpoints: {
         768: {
-          slidesPerView: 4,
+          slidesPerView: 2,
+        },
+        1000: {
+          slidesPerView:4,
         },
       },
     });
